@@ -1,7 +1,8 @@
 package main;
 
+import com.sun.xml.internal.ws.api.model.wsdl.WSDLOutput;
 
-import java.util.Arrays;
+import java.util.*;
 
 public class LogicalOp {
 
@@ -368,7 +369,6 @@ public class LogicalOp {
     }
     //Creati o metoda care primeasca un parametru de tip array de numere intregi gol, si sa il returneze populat cu toate valorile pare de la 1 la 100. Apelati metoda in main() pentru a verifica daca functioneaza. Atentie, metoda returneaza un array, deci acesta va trebui surprins si afisat folosind o bucla.
     public int[] myArrays(int[] arr){
-
         int pos = 0;
         for (int i = 1; i <= 100; i++){
                if(i % 2 == 0) {
@@ -378,6 +378,172 @@ public class LogicalOp {
             }
         return  arr;
         }
+        //Creati o metoda care sa primeasca un parametru de tip array de numere, si sa fie populat cu valori. Metoda sa calculeze si sa returneze media numerelor din array.
+
+    public double averageArray(int[] arra){
+
+        int sum =0;
+
+        for(int i = 0; i < 7; i++){
+            sum += arra[i];
+        }
+        double average = sum/arra.length;
+        return average;
+    }
+
+    //Creati o metoda care sa primeasca un parametru de tip array de string-uri, populat cu valori, si un parametru de tip String. Metoda sa verifice daca valoarea string-ului primit se regaseste in array-ul primit, iar daca da sa returneze true iar daca nu, sa returneze false.
+    public boolean isItThere(String[] arrSrg, String animal){
+
+        for(int i = 0; i < arrSrg.length; i++){
+            while (animal == arrSrg[i]){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    //Creati o metoda care sa primeasca un parametru de tip array de numere, populat cu valori, si un parametru de tip numar. Metoda sa verifice daca numarul primit se afla in array-ul primit, si daca da, atunci sa returneze pozitia pe care se afla numarul.
+    public int isItReceived(int[] arrayRec, int x){
+        for(int i = 0; i < arrayRec.length;i++){
+            while (x == arrayRec[i]){
+                return i;
+            }
+        }
+        return 0;
+    }
+
+   // Creati o metoda care sa afiseze urmatoarea grila, folosind un array:
+   public void lines(){
+        int[][] array = new int[10][10];
+        for(int row = 0; row <10; row++){
+            for( int col = 0; col < 10;col++){
+                System.out.print("-");
+            }
+            System.out.println();
+        }
+   }
+   //De refacut pentru duplicate**
+   //Creati o metoda care sa primeasca un parametru de tip array de numere, populat cu valori, si un parametru de tip numar. Metoda sa verifice daca numarul exista in array, si daca da, sa returneze array-ul primit, fara acel numar.
+    public int[] onlyOne(int[] arry, int x){
+        int j = 0;
+        int count = 1;
+        int[] arry2 = new int[arry.length -  count];
+        for(int i = 0; i < arry.length; i++){
+                if (x != arry[i]) {
+
+                        arry2[j] = arry[i];
+                         j++;
+
+                } else if (x == arry[i]) {
+                    count++;
+                }
+
+            }
+        return arry2;
+        }
+
+        //Creati o metoda care sa primeasca un array, si sa returneze al doilea cel mai mic numar din array.
+    public int theSmallerOne(int[] arRa){
+
+        int min;
+        int secondMin;
+        if(arRa[0] > arRa[1]){
+            min = arRa[1];
+            secondMin = arRa[0];
+        }else{
+            min = arRa[0];
+            secondMin = arRa[1];
+        }
+
+        for(int i = 2; i < arRa.length; i++){
+            if(arRa[i] < min) {
+                secondMin = min;
+                min = arRa[i];
+
+            }else if((arRa[i] > min) && (arRa[i] < secondMin)){
+                secondMin = arRa[i];
+
+            }
+            return secondMin;
+        }
+        return 0;
+
+    }
+//Creati o metoda care sa primeasca doi parametrii: un array populat cu valori, si un array gol. Metoda sa copieze toate valorile din primul array, parcurgandu-l, in cel de-al doilea.
+    public void arrayPopulate(int[]ar1, int[] ar2){
+
+        for (int i = 0; i < ar1.length; i++){
+                ar2[i] = ar1[i];
+                System.out.println(Arrays.toString(ar2) + " ");
+        }
+    }
+
+//Lists
+    //Scrieti o metoda Java, care sa primeasca parametru o Lista, si sa afiseze, pe rand, toate valorile din lista, fiecare pe rand nou.
+
+    public void displayList(List numbers){
+
+        for(int i =0; i < numbers.size(); i++){
+            System.out.println(numbers.get(i));
+
+        }
+    }
+    //Scrieti o metoda Java, care sa primeasca doi parametrii: un parametru sa fie o lista de numere, si celalalt un numar (real sau intreg). Metoda sa adauge numarul primit ca si parametru la final de lista.
+    public void addNumberToList(List<Integer> nums, int x){
+        nums.add(nums.size(),x);
+        for(int i : nums){
+            System.out.print(i + " ");
+        }
+
+    }
+    //Scrieti o metoda Java, care sa primeasca doi parametrii: un parametru de tip Lista, iar celalalt un numar intreg. Sa se parcurga lista si sa afiseze, pe rand, toate valorile din lista, fiecare pe rand nou, pornind de la numarul intreg primit ca si parametru.
+    public void exListThree(List<Integer> numbs, int x){
+        numbs.add(0,x);
+        for(int i : numbs){
+            System.out.println(i);
+        }
+    }
+    //Scrieti o metoda Java, care sa primeasca parametru o Lista, si sa afiseze, pe rand, toate valorile din lista, dar invers(de la capat la inceput).
+    public void displayReverse(List<Integer> lst){
+
+        Collections.reverse(lst);
+        System.out.println(lst);
+
+    }
+    //Scrieti o metoda Java, care sa primeasca trei parametrii: unul de tip Lista de String-uri, unul de tip intreg, si unul de tip String. Metoda sa adauge parametrul de tip String in lista primita, iar parametrul de tip intreg reprezinta pozitia la care sa fie pus acel String.
+    public void mergeLists(List<String> srg1, int integ, String srg2){
+        srg1.add(integ,srg2);
+        for (String i : srg1){
+            System.out.println(i);
+        }
+    }
+    //Scrieti o metoda Java, care sa primeasca doi parametrii. Primul dintre ei va fi o Lista, iar metoda sa ia al doilea parametru si sa il adauge pe prima pozitie din lista.
+    public void addOnFirstPosition(List<Integer> ints, int x){
+        ints.add(0,x);
+        for (int i : ints){
+            System.out.println(i);
+        }
+    }
+    //Scrieti o metoda Java care sa primeasca parametru o Lista, si sa afiseze ce valori are lista, si ce pe ce pozitie. (Ex: “Pe pozitia 1 valoare este 4”).
+    public void whatPosition(List<Integer> numberss){
+        for(int i = 0; i < numberss.size(); i++){
+            System.out.println("Pe pozitia " + i + " valoarea este " + numberss.get(i));
+        }
+    }
+    //Scrieti o metoda Java care sa primeasca o Lista si sa returneze cel mai mare numar din ea.
+    public int theBiggestNum(List<Integer> big){
+        int max = Integer.MIN_VALUE;
+        for(int i = 0; i < big.size();i++){
+            if(big.get(i) > max){
+                max = big.get(i);
+            }
+        }return max;
+    }
+
+
+
+
+
 
     }
 

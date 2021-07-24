@@ -1,6 +1,8 @@
 package main;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class Main {
 
@@ -92,6 +94,40 @@ public class Main {
         logicalOp.populateArray();
         int[] arr = new int[50];
         System.out.println(Arrays.toString(logicalOp.myArrays(arr)));
+        int[] arra = {2,3,6,4,31,6,5};
+        System.out.println("The average is " + logicalOp.averageArray(arra));
+        String[] arrSrg = {"dog", "cat", "mouse", "bear"};
+        System.out.println(logicalOp.isItThere(arrSrg, "cat"));
+        int[] arrayRec = {2,4,5,6,3,2,4};
+        System.out.println(logicalOp.isItReceived(arrayRec,5));
+        logicalOp.lines();
+        int[] arry = {2,5,6,4,9,7};
+        System.out.println(Arrays.toString(logicalOp.onlyOne(arry, 4)));
+        int[] arRa = {3,6,5,6,7};
+        System.out.println(logicalOp.theSmallerOne(arRa));
+        System.out.println(" ");
+        int[] ar1 = {3,2,5,6,7,8};
+        int[] ar2 = new int[6];
+        logicalOp.arrayPopulate(ar1,ar2);
+        List numbers = new ArrayList(Arrays.asList(2,3,5,6,4,3,2,1));
+        logicalOp.displayList(numbers);
+        List<Integer> nums = new ArrayList<>(Arrays.asList(111,34,15,5,24,33,2,1));
+        logicalOp.addNumberToList(nums,6);
+        System.out.println(" ");
+        List<Integer> numbs = new ArrayList<>(Arrays.asList(3,4,6));
+        logicalOp.exListThree(numbs, 8);
+        List<Integer> lst = new ArrayList<>(Arrays.asList(2,31,3,4));
+        logicalOp.displayReverse(lst);
+        List<String> srg1 = new ArrayList<>(Arrays.asList("dog", "frog", "bird"));
+        logicalOp.mergeLists(srg1,1,"CAT");
+        List<Integer> ints = new ArrayList<>(Arrays.asList(24,312,32,24));
+        logicalOp.addOnFirstPosition(ints,3);
+        List<Integer> numberss = new ArrayList<>(Arrays.asList(2,3,4,1));
+        logicalOp.whatPosition(numberss);
+        List<Integer> big = new ArrayList<>(Arrays.asList(55,3,1,2));
+        System.out.println(logicalOp.theBiggestNum(big));
+
+
 
     }
     public static void afisare(){
