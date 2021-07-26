@@ -46,7 +46,7 @@ public class Main {
         System.out.println(" ");
         logicalOp.numaratoareInversa(2);
         System.out.println(" ");
-        logicalOp.countingBetweenNumbers(1,20);
+        logicalOp.countingBetweenNumbers(23,20);
         System.out.println(" ");
         logicalOp.comparingCountingNumbers(23,12);
         System.out.println(" ");
@@ -126,7 +126,10 @@ public class Main {
         logicalOp.whatPosition(numberss);
         List<Integer> big = new ArrayList<>(Arrays.asList(55,3,1,2));
         System.out.println(logicalOp.theBiggestNum(big));
-
+        int[] arrayy = {2,3,4,5,3,8};
+        logicalOp.numbersOfArray(arrayy, 9);
+        System.out.println(" ");
+        logicalOp.wait(5);
 
 
     }

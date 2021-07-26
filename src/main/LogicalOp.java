@@ -136,10 +136,15 @@ public class LogicalOp {
 
     //3Creati o metoda in clasa LogicalOp, care sa primeasca doi parametrii de tip numar. Metoda sa afiseze o numaratoare intre cele doua numere primite, pornind de la primul parametru primit, pana la cel de-al doilea(ex: daca int xe primul parametru iar int y  este cel de-al doilea, numaratoarea sa se faca de la x, la y.
     public void countingBetweenNumbers(int x, int y) {
-        for (int i = x; i <= y; i++) {
-            System.out.print(x + " , ");
-            x = x + 1;
+        if(x < y) {
+            for (int i = x; i <= y; i++) {
+                System.out.print(x + " , ");
+                x = x + 1;
+            }
+        }else{
+            System.out.println("x is greater than y!");
         }
+
     }
 
     //4Creati o metoda in clasa LogicalOp, care sa primeasca doi parametrii de tip numar. Metoda trebuie sa verifice care dintre cele doua numere este mai mare, si sa execute o numaratoare crescatoare de la cel mai mic la cel mai mare.(ex: daca int x e primul parametru iar int y  este cel de-al doilea, daca x  este mai mare decat y,  atunci numaratoarea sa fie de la y la x).
@@ -337,21 +342,35 @@ public class LogicalOp {
             i++;
         }
     }
-    //10.Creati o metoda numita CozaLozaWoza. NOT DONE.*******
+    //10.Creati o metoda numita CozaLozaWoza.
     public void CozaLozaWoza(){
         int x = 1;
-        for(int i = 1; i <=110; i++){
-
-            System.out.print(" " + i);
-            if(i % 11 == 0){
-                System.out.println("  ");
+        while(x <= 110) {
+            for (int i = 0; i < 11; i++) {
+                if ((x % 3 == 0) && (x % 5 == 0) && (x % 7 == 0)) {
+                    System.out.print("CozaLozaWoza ");
+                } else if ((x % 5 == 0) & (x % 7 == 0)) {
+                    System.out.print("WozaLoza ");
+                } else if (x % 3 == 0 & x % 7 == 0) {
+                    System.out.print("CozaWoza ");
+                } else if (x % 3 == 0 & x % 5 == 0) {
+                    System.out.print("CozaLoza ");
+                } else if (x % 7 == 0) {
+                    System.out.print("Woza ");
+                } else if (x % 5 == 0) {
+                    System.out.print("Loza ");
+                } else if (x % 3 == 0) {
+                    System.out.print("Coza ");
+                }else{
+                    System.out.print(x + " ");
+                }
+                x++;
             }
+            System.out.println();
+        }
 
-        }
-        while (x == 3){
-            String s = Integer.toString(x);
-            s = "Cozia";
-        }
+
+
 
     }
 // In clasa LogicalOp, creati o metoda care sa scrie pe un array de 100 de pozitii, valorile de la 1 la 100. Sa se afiseze progresul in consola pe tot parcursul.
@@ -540,11 +559,30 @@ public class LogicalOp {
         }return max;
     }
 
+//Lists
+    //In clasa LogicalOp, creati o metoda care sa primeasca un array de numere ca si parametru, si un numar. Fara a folosi conditii, si folosind un try-catch, afisati valoarea de pe pozitia numarului primit, iar daca valoarea numarului este mai mare decat numarul de pozitii din array, afisati textul: "Inside catch, number too large".
+    public void numbersOfArray(int[] array, int x){
 
+            try {
+                    System.out.println(array[x]);
 
+            } catch (ArrayIndexOutOfBoundsException e) {
+                System.out.println("Inside catch, number too large");
+            }
 
+    }
 
+//In clasa LogicalOp, creati o metoda  'wait()'. Metoda sa nu returneze nimic, dar sa primeasca un parametru de tip int. In interiorul ei, tratati metoda Thread.sleep(), astfel incat metoda noastra sa primeasca valoarea in secunde, cat sa astepte. Ex: wait(5) -> asteapta 5 secunde.
+        public void wait(int x) {
+            long sleepy = x * 1000;
+            try {
+                Thread.sleep(sleepy);
+                System.out.println("Heei");
 
+            } catch (InterruptedException e) {
+                System.out.println("The thread is interrupted.");
+            }
+        }
     }
 
 
