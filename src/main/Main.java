@@ -142,6 +142,16 @@ public class Main {
         logicalOp.shareNumbers();
         System.out.println(" ");
         logicalOp.sortTheArray();
+        System.out.println(" ");
+        logicalOp.elementChangeBetween();
+        System.out.println(" ");
+        List <Integer>lista = new ArrayList<>();
+        lista.add(3);
+        lista.add(2);
+        lista.add(4);
+        List<Integer> copy = new ArrayList<>();
+        System.out.println(logicalOp.anotherList(lista,copy));
+        System.out.println(logicalOp.sortList(lista));
 
 
     }

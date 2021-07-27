@@ -2,6 +2,7 @@ package main;
 
 import com.sun.xml.internal.ws.api.model.wsdl.WSDLOutput;
 
+import java.awt.geom.Area;
 import java.util.*;
 
 public class LogicalOp {
@@ -700,5 +701,44 @@ public class LogicalOp {
                 }
             }
         }  System.out.println(Arrays.toString(array));
+    }
+
+
+    //Scrieti o metoda Java care sa schimbe pozitia a doua elemente intr-o Lista
+    public void elementChangeBetween() {
+        List<Integer> lista = new ArrayList<>(Arrays.asList(2, 3, 4, 2, 1, 3, 4, 5));
+        Collections.swap(lista,2,5);
+        System.out.println(lista);
+    }
+
+    //Scrieti o metoda Java care sa primeasca o Lista si sa returneze o alta lista, care sa contina doar numerele pare din lista primita.
+    public List<Integer> anotherList(List<Integer> lista, List<Integer> copy){
+
+        for(Integer i : lista){
+            if(i % 2 == 0){
+                copy.add(i);
+            }
+
+        }
+        return copy;
+
+    }
+    //Scrieti o metoda Java care sa primeasca parametru o Lista nesortata, si sa returneze Lista sortata crescator. Atentie, sortarea sa se faca programatic(adica logica sa fie scrisa de voi), si nu folosit librarie externa, precum Collection.sort().
+
+    public List<Integer> sortList(List<Integer> lista){
+
+        for(int i = 0; i < lista.size(); i++){
+            for(int j = lista.size() - 1; j > i; j--){
+                if(lista.get(i)  > lista.get(j)){
+                    int a = lista.get(i);
+                    lista.set(i, lista.get(j));
+                    lista.set(j,a);
+                }
+            }
+        }
+        for(int i : lista){
+           return lista;
+        }
+        return null;
     }
 }
