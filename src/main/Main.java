@@ -130,6 +130,18 @@ public class Main {
         logicalOp.numbersOfArray(arrayy, 9);
         System.out.println(" ");
         logicalOp.wait(5);
+        System.out.println(" ");
+        logicalOp.insertInArr();
+        System.out.println(" ");
+        logicalOp.smallerAndBigger();
+        System.out.println(" ");
+        logicalOp.reverseArray();
+        System.out.println(" ");
+        logicalOp.findDuplicates();
+        System.out.println(" ");
+        logicalOp.shareNumbers();
+        System.out.println(" ");
+        logicalOp.sortTheArray();
 
 
     }
